@@ -1,3 +1,288 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Henny Penny');
+:root{
+  --primary-color: #31263e;
+  --secondary-color: #44355b;
+  --background-color: #221e22;
+  --text-color: #eca72c;
+}
 body {
-  background-color: #dfecff;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+}
+/* HEADER */
+header{
+    display:grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 100px auto;
+    align-items: center;
+    /*Pomoc AI w napisaniu i zrozumieniu gradientu*/
+    background:
+            radial-gradient(circle at 20% 30%, white 0px, transparent 3px),
+            radial-gradient(circle at 40% 60%, white 0px, transparent 2px),
+            radial-gradient(circle at 70% 20%, white 0px, transparent 4px),
+            radial-gradient(circle at 25% 40%, white 0px, transparent 2px),
+            radial-gradient(circle at 45% 65%, white 0px, transparent 3px),
+            radial-gradient(circle at 75% 35%, white 0px, transparent 2px),
+
+            linear-gradient(
+            to bottom,
+            var(--secondary-color) 0%,
+            #000000 100%
+    );
+    margin: 10px 10px 0 10px;
+    padding: 0px 10px 10px 10px;
+}
+.grid1{
+    grid-column:1;
+    grid-row: 1;
+
+}
+.scaryPumpkin {
+    width: 100px;
+    max-width: 100%;
+    height: auto;
+}
+.grid2{
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    align-self: start;
+}
+.blood{
+    width:400px;
+    display:block;
+    filter: brightness(0);
+}
+.grid3{
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+.bats{
+    width: 240px;
+    height: 90px;
+}
+.grid4{
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end;
+}
+
+.grid5{
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    text-align: center;
+}
+.grid5 p{
+    font-family: 'Nosifer', cursive;
+    font-size:48px;
+}
+
+.castle{
+    width: 200px;
+    height: auto;
+}
+.grid6{
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+}
+.scaryTree{
+    width: 200px;
+    height: auto;
+}
+
+/* SECTION  */
+main{
+    display:grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    /*Pomoc AI w napisaniu i zrozumieniu gradientu*/
+    background:
+            radial-gradient(circle at 20% 30%, white 0px, transparent 3px),
+            radial-gradient(circle at 40% 60%, white 0px, transparent 2px),
+            radial-gradient(circle at 70% 20%, white 0px, transparent 4px),
+            radial-gradient(circle at 25% 40%, white 0px, transparent 2px),
+            radial-gradient(circle at 45% 65%, white 0px, transparent 3px),
+            radial-gradient(circle at 75% 35%, white 0px, transparent 2px);
+
+    background-color: var(--primary-color);
+    margin: 0 10px 0 10px;
+    padding: 0px 10px 10px 10px;
+}
+section{
+    color: var(--text-color);
+    margin: 10px 20px 10px 10px;
+    padding: 10px;
+}
+section h1,
+section h2,
+section h3{
+    font-family: 'Henny Penny', cursive;
+    margin-left: 30px;
+    text-align: center;
+}
+section p{
+
+    margin-left: 30px;
+    text-align: center;
+    font-size: 22px
+}
+.pumpkins{
+    width: 100%;
+    height: auto;
+}
+
+
+.events{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    list-style: none;
+    padding:0;
+}
+.events img.photo{
+    width: 90%;
+    height: auto;
+    border: 6px double #eca72c;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+.events img.photo2{
+    display: none;
+}
+.events li {
+    text-align: center;
+}
+
+.events li p {
+    margin: 10px 0;
+}
+.grid1-3 p{
+    margin-left: auto;
+    margin-right: auto;
+    padding:20px;
+    width: 90%;
+    border: 3px solid #fff176;
+    box-shadow:
+            0 0 3px #ffffff,
+            0 0 7px #ffff00,
+            0 0 12px #ff9900,
+            0 0 20px #ff4500,
+            0 0 35px #ff2200;
+}
+footer {
+    background: radial-gradient(
+            circle at center,
+            #44355b 0%,
+            #000000 100%
+    );
+
+
+
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    text-align: center;
+}
+/* Ukrywamy grafiki należące do stylu 2 */
+.sweetPumpkin,
+.pumpkinDog,
+.zombieHand,
+.monsters,
+.zombieGirl,
+.photo2,
+.blood-extra{
+    display: none;
+}
+@media (max-width: 600px) {
+
+    header {
+        grid-template-columns: 80px 1fr 80px;
+        grid-template-rows: 80px 130px;
+        padding: 0 5px 10px;
+    }
+
+    .scaryPumpkin {
+        width: 65px;
+    }
+
+    .blood {
+        width: 100%;
+        height: auto;
+    }
+
+    .bats {
+        width: 70px;
+        height: auto;
+    }
+
+    .castle {
+        width: 75px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .scaryTree {
+        width: 75px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .grid3,
+    .grid6 {
+        justify-self: end;
+    }
+
+    .grid5 p {
+        font-size: 20px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 10px 15px;
+    }
+
+    section {
+        margin: 10px 0;
+        padding: 5px;
+    }
+
+    section h1,
+    section h2,
+    section h3 {
+        margin-left: 0;
+        font-size: 28px;
+    }
+
+    section p {
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    .events {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .events img.photo {
+        width: 90%;
+    }
+
+    .events li p {
+        font-size: 16px;
+    }
+
+    .grid1-3 p {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
 }
