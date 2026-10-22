@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imie Nazwisko (00000) - AI LAB B</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+<body>
+<div id="all">
+
+    <!-- FORMULARZ WYSZUKIWANIA -->
+    <form id="searchForm">
+        <input type="search" id="search" placeholder="Wyszukaj...">
+    </form>
+
+    <!-- LISTA ZADAŃ -->
+    <div id="taskContainer">
+        <div class="task">
+            <input type="checkbox">
+            <span class="taskName">Task1</span>
+            <span class="taskDate">2026-12-20</span>
+            <button class="deleteButton" type="button">Usuń</button>
+        </div>
+        <div class="task">
+            <input type="checkbox">
+            <span class="taskName">Task2</span>
+            <span class="taskDate">2026-12-20</span>
+            <button class="deleteButton" type="button">Usuń</button>
+        </div>
+    </div>
+
+
+    <!-- FORMULARZ DODAWANIA -->
+    <form id="taskForm">
+        <input type="text" id="value" placeholder="Do zrobienia..."
+               minlength="3" maxlength="255" required>
+
+        <input type="date" id="date">
+
+        <button type="submit">Dodaj</button>
+    </form>
+
+</div>
+</body>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+  background-color: #f3fff3;
+}
+#all {
+
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffb6dc;
+  text-align: center;
+  width: 70%;
+  border: 6px double black;
+  padding: 20px;
+
+}
+input[type="text"],
+input[type="search"],
+input[type="date"] {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+
+}
+#search {
+
+  width: 100%;
+
+  margin-bottom: 20px;
+
+}
+
+/* POJEDYNCZE ZADANIE */
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+.taskName {
+  flex: 1;
+  text-align: left;
+}
+
+/* DATA */
+.taskDate {
+  color: black;
+  font-size: 17px;
+  border: 3px solid #ffb6dc;
+  border-radius: 8px;
+  padding: 10px;
+}
+.taskDate:hover{
+  background-color: #c77dff;
+}
+button{
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #6b7280;
+  border-radius: 8px;
+}
+button:hover{
+  background-color: #c77dff;
+}
+#formContainer {
+  width: 100%;
+}
+
+#taskForm {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+#value {
+  flex: 2;
+  min-width: 0;
+}
+
+#date {
+  flex: 1;
+  min-width: 0;
+}
+
+#taskForm button {
+  flex: 0 0 auto;
+}
