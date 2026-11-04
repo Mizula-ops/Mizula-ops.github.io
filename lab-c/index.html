@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artur Mizuła (55831) - AI LAB C</title>
+    <link rel="stylesheet" href="leaflet-1.9.4/leaflet.css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="leaflet-1.9.4/leaflet-src.js"></script>
+    <script src="leaflet-1.9.4/leaflet-providers.js"></script>
+    <script src="leaflet-1.9.4/leaflet-image.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+<h1>Puzzle z mapą</h1>
+<section>
+    <h2>Mapa interaktywna</h2>
+    <div id="map"></div>
+    <button id="locationBtn">Moja lokalizacja</button>
+    <button id="downloadBtn">Pobierz mapę</button>
+    <p id="coordinates">Współrzędne: brak</p>
+    <canvas id="rasterMap" width="600" height="300"></canvas>
+</section>
+<div class="puzzleLayout">
+
+    <section>
+        <h2>Rozsypane puzzle</h2>
+        <div id="puzzleContainer"></div>
+    </section>
+
+    <section>
+        <h2>Plansza do układania</h2>
+        <div id="puzzleBoard"></div>
+    </section>
+
+</div>
+</body>
+</html>
