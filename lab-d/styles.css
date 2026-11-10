@@ -1,0 +1,452 @@
+/*Wygenerowane przez chatgpt na bazie styli które ja zrobiłem poprosiłem o stworzenie animacji chmur*/
+
+/* ==========================================
+   PODSTAWOWE USTAWIENIA
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    145deg,
+    #f8c8dc 0%,
+    #efa8c8 50%,
+    #e88db7 100%
+  );
+  color: #722747;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   GŁÓWNY KONTENER
+========================================== */
+
+.weatherApp {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* ==========================================
+   NAGŁÓWEK
+========================================== */
+
+header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+header h1 {
+  font-size: clamp(30px, 5vw, 42px);
+  font-weight: 700;
+  color: #c72d75;
+  margin: 0 0 12px;
+  letter-spacing: -1px;
+}
+
+header p {
+  font-size: 16px;
+  color: #a65b7d;
+  margin: 0;
+}
+
+/* ==========================================
+   WYSZUKIWARKA
+========================================== */
+
+.searchSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+#cityInput {
+  flex: 1 1 250px;
+  min-width: 0;
+  padding: 16px 20px;
+  border: 1px solid rgba(190, 65, 120, 0.25);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.45);
+  color: #722747;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#cityInput::placeholder {
+  color: #b67b97;
+}
+
+#cityInput:focus {
+  border-color: #d63384;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* ==========================================
+   PRZYCISK
+========================================== */
+
+#weatherBtn {
+  flex: 0 1 auto;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 30px;
+  background: #d63384;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#weatherBtn:hover {
+  background: #b9256e;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   SEKCJE POGODOWE
+========================================== */
+
+.currentWeather,
+.forecastSection {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 20px 0;
+  margin-bottom: 35px;
+}
+
+/* ==========================================
+   AKTUALNA POGODA
+========================================== */
+
+.currentWeather {
+  text-align: center;
+  padding-top: 45px;
+}
+
+.currentWeather h2 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #a65b7d;
+  margin-bottom: 30px;
+}
+
+#currentWeatherData {
+  text-align: center;
+}
+
+#cityName {
+  font-size: 30px;
+  font-weight: 500;
+  color: #a42d68;
+  margin: 10px 0;
+}
+
+/* Data i godzina aktualnej pogody */
+
+#currentDate {
+  font-size: 15px;
+  color: #854361;
+  margin: 8px 0 20px;
+  text-transform: capitalize;
+}
+
+/* Ikona aktualnej pogody */
+
+#weatherIcon {
+  display: block;
+  width: 115px;
+  height: 115px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Temperatura */
+
+#temperature {
+  font-size: clamp(60px, 10vw, 85px);
+  font-weight: 300;
+  color: #b9256e;
+  margin: 5px 0 15px;
+  letter-spacing: -4px;
+}
+
+/* Temperatura odczuwalna */
+
+#feelsLike {
+  font-size: 17px;
+  color: #854361;
+  margin: 5px 0 20px;
+}
+
+/* Opis pogody */
+
+#description {
+  font-size: 19px;
+  color: #854361;
+  margin-bottom: 30px;
+}
+
+/* Wilgotność i wiatr */
+
+#humidity,
+#windSpeed {
+  display: inline-block;
+  font-size: 15px;
+  color: #854361;
+  margin: 10px 18px;
+}
+
+/* ==========================================
+   PROGNOZA NA 5 DNI
+========================================== */
+
+.forecastSection {
+  margin-top: 55px;
+  border-top: 1px solid rgba(160, 60, 110, 0.2);
+  padding-top: 35px;
+}
+
+.forecastSection h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  color: #a42d68;
+  margin-bottom: 35px;
+}
+
+/* ==========================================
+   UKŁAD DNI
+========================================== */
+
+/*
+  Każdy dzień ma własną kolumnę.
+  Kolumny automatycznie przechodzą
+  do następnego wiersza na węższych ekranach.
+*/
+
+#forecastContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+/* Kolumna pojedynczego dnia */
+
+.dayColumn {
+  text-align: center;
+  min-width: 0;
+}
+
+/* Nagłówek dnia */
+
+.dayHeading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #a42d68;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+  margin: 0 0 15px;
+  border-bottom: 2px solid rgba(160, 60, 110, 0.3);
+}
+
+/* ==========================================
+   POJEDYNCZY POMIAR PROGNOZY
+========================================== */
+
+.forecastCard {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(160, 60, 110, 0.2);
+  box-shadow: none;
+  padding: 20px 5px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.forecastCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Wszystkie paragrafy prognozy */
+
+.forecastCard p {
+  font-size: 15px;
+  color: #854361;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+/* Godzina pomiaru */
+
+.forecastHour {
+  font-size: 16px;
+  font-weight: 600;
+  color: #a42d68;
+}
+
+/* Ikona pogody */
+
+.forecastCard img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+/* Temperatura prognozy */
+
+.forecastTemperature {
+  font-size: 26px;
+  font-weight: 700;
+  color: #c72d75;
+}
+
+/* Temperatura odczuwalna */
+
+.forecastFeelsLike {
+  font-size: 13px;
+  color: #854361;
+}
+
+/* Opis pogody */
+
+.forecastDescription {
+  font-size: 13px;
+  color: #854361;
+}
+
+/* ==========================================
+   KOMUNIKATY BŁĘDÓW
+========================================== */
+
+#errorMessage {
+  color: #b9256e;
+  text-align: center;
+  font-weight: 600;
+  margin: 20px auto;
+}
+
+#errorMessage:empty {
+  display: none;
+}
+
+/* ==========================================
+   UKRYWANIE ELEMENTÓW
+========================================== */
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================
+   CHMURKI W TLE
+========================================== */
+
+.clouds {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Podstawowy wygląd chmurek */
+
+.cloud {
+  position: absolute;
+  width: 350px;
+  height: auto;
+  opacity: 0.95;
+  filter: brightness(1.1) contrast(1.15);
+  animation: floatCloud 7s ease-in-out infinite alternate;
+}
+
+/* Chmurka 1 - lewy górny róg */
+
+.cloud1 {
+  top: 2%;
+  left: -5%;
+  width: 420px;
+  animation-duration: 8s;
+}
+
+/* Chmurka 2 - prawy górny róg */
+
+.cloud2 {
+  top: 10%;
+  right: -6%;
+  width: 380px;
+  animation-duration: 10s;
+  animation-delay: -3s;
+}
+
+/* Chmurka 3 - lewa środkowa część */
+
+.cloud3 {
+  top: 40%;
+  left: -8%;
+  width: 350px;
+  animation-duration: 9s;
+  animation-delay: -2s;
+}
+
+/* Chmurka 4 - prawa środkowa część */
+
+.cloud4 {
+  top: 48%;
+  right: -7%;
+  width: 450px;
+  animation-duration: 11s;
+  animation-delay: -5s;
+}
+
+/* Chmurka 5 - lewy dolny róg */
+
+.cloud5 {
+  bottom: -5%;
+  left: 5%;
+  width: 400px;
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+/* Chmurka 6 - prawy dolny róg */
+
+.cloud6 {
+  bottom: -8%;
+  right: 3%;
+  width: 370px;
+  animation-duration: 9s;
+  animation-delay: -1s;
+}
+
+/* ==========================================
+   ANIMACJA CHMUREK
+========================================== */
+
+@keyframes floatCloud {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(20px, -15px);
+  }
+}

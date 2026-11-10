@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imie Nazwisko (00000) - AI LAB D</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+<div class="clouds" aria-hidden="true">
+    <img src="img/chmurka.png" class="cloud cloud1" alt="">
+
+    <img src="img/chmurka1.png" class="cloud cloud2" alt="">
+    <img src="img/chmurka.png" class="cloud cloud3" alt="">
+    <img src="img/chmurka1.png" class="cloud cloud4" alt="">
+    <img src="img/chmurka.png" class="cloud cloud5" alt="">
+    <img src="img/chmurka1.png" class="cloud cloud6" alt="">
+
+</div>
+<main class="weatherApp">
+    <header>
+
+        <h1>Weather App</h1>
+        <p>Sprawdź pogodę w swoim mieście</p>
+    </header>
+
+    <section class="searchSection">
+        <input type="text" id="cityInput" placeholder="Wpisz nazwę miasta">
+        <button id="weatherBtn">Pogoda</button>
+
+    </section>
+    <p id="errorMessage" role="alert"></p>
+
+    <section class="currentWeather">
+        <h2>Aktualna pogoda</h2>
+        <div id="currentWeatherData">
+            <h3 id="cityName"></h3>
+            <p id="currentDate"></p>
+            <img id="weatherIcon" src="" alt="Ikona pogody" hidden>
+            <p id="temperature"></p>
+            <p id="feelsLike"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="windSpeed"></p>
+
+        </div>
+
+    </section>
+
+
+    <section class="forecastSection">
+
+        <h2>Prognoza na 5 dni — co 3 godziny</h2>
+
+        <div id="forecastContainer">
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
